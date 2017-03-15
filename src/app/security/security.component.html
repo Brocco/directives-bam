@@ -1,0 +1,19 @@
+<div>
+  <span>Assign Roles: </span>
+  <button (click)="toggleRole('guest')">Guest</button>
+  <button (click)="toggleRole('user')">User</button>
+  <button (click)="toggleRole('admin')">Admin</button>
+</div>
+<div>
+  <span>Current Roles:</span>
+  <ul class="roles">
+    <li *ngFor="let role of currentRoles | async">{{role}}</li>
+  </ul>
+</div>
+<hr>
+<div>via Directive</div>
+<div>
+  <button [lockDown]="['guest']">Guest Action</button>
+  <button [lockDown]="['user']">User Action</button>
+  <button [lockDown]="['admin']">Admin Action</button>
+</div>

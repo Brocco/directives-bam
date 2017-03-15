@@ -1,0 +1,47 @@
+<div class="button-row">
+  <button (click)="setState('blink')">Blink</button>
+  <button (click)="setState('bedazzle')">Bedazzle</button>
+  <button (click)="setState('colors')">Colors</button>
+  <button (click)="setState('colorEvent')">Colors w/ events</button>
+  <button (click)="setState('security')">Security</button>
+</div>
+<hr>
+<div [ngSwitch]="view" class="wrapper">
+  <ng-template [ngSwitchCase]="'blink'">
+    <div class="big">
+
+    <div blink>Hi... Bye</div>
+
+    </div>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'bedazzle'">
+    <div class="big">
+
+    <div bling [color]="'blue'">Blue</div>
+    <div bling [color]="'red'">Red</div>
+
+    </div>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'colors'">
+    <div class="big">
+
+    <div colorCycle>Color Cycle</div>
+
+    </div>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'colorEvent'">
+    <div class="big">
+
+    <div colorCycleEvent
+         (colorChanged)="colorChanged($event)">
+         Color Cycle</div>
+    <div>{{color}}</div>
+
+    </div>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'security'">
+
+    <security-demo></security-demo>
+
+  </ng-template>
+</div>

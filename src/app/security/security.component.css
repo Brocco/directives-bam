@@ -1,0 +1,13 @@
+:host > * {
+  font-size: .75em;
+}
+
+.roles, .roles > li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.roles > li:not(:last-child)::after {
+    content: ", ";
+}
